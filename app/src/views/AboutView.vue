@@ -8,8 +8,12 @@ async function getData(URL) {
   try {
     const response = await fetch(URL)
     const info = await response.json()
-  } catch (error) {}
+    console.log(info)
+  } catch (error) {
+    console.log(error)
+  }
 }
+getData(API)
 </script>
 
 <style lang="scss" scoped></style>
