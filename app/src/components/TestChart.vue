@@ -7,7 +7,7 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import Chart from 'chart.js/auto' // Import Chart.js
+import Chart from 'chart.js' // Import Chart.js
 
 export default {
   setup() {
