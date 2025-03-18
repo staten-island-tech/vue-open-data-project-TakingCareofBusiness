@@ -1,54 +1,19 @@
 <template>
-  <div>
-    <canvas ref="myChart"></canvas>
-    <h1>Hi</h1>
-  </div>
+  <div></div>
 </template>
 
-<script>
-import { ref, onMounted } from 'vue'
-import Chart from 'chart.js' // Import Chart.js
-
-export default {
-  setup() {
-    const myChartRef = ref(null) // Create a reference for the canvas element
-    let chartInstance = null // To store the chart instance
-
-    onMounted(() => {
-      const ctx = myChartRef.value // Get the canvas DOM element
-
-      if (ctx) {
-        // Initialize the chart only if the canvas exists
-        chartInstance = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [
-              {
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1,
-              },
-            ],
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true,
-              },
-            },
-          },
-        })
-      }
-    })
-
-    return {
-      myChartRef, // Expose the reference to the template
-    }
-  },
-}
+<script setup>
+import { reactive } from 'vue'
+const dataTime = reactive([time[0], time[1], time[2], time[3], time[4], time[5]])
+const chartData = reactive({
+  labels: ['School', 'Sleep', 'Exercise', 'Electronics', 'Travel', 'Essentials'],
+  datasets: [
+    {
+      data: dataTime,
+      backgroundColor: ['#FFCE56', '#36A2EB', '#FF6384', '#4BC0C0', '#FFA726', '#BF53FF'],
+    },
+  ],
+})
 </script>
 
-<style scoped>
-/* Add any additional styling here */
-</style>
+<style lang="scss" scoped></style>
