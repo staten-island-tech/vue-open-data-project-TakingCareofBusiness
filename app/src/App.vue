@@ -2,11 +2,11 @@
   <div>
     <header>
       <div class="wrapper">
+        <h1 class="text-6xl">Daily Inmate Info</h1>
         <nav>
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
         </nav>
-        <h1 class="text-6xl">Jonathan Ou</h1>
       </div>
     </header>
 
