@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import APIData from "APIData.vue"
+import APIData from '../components/APIData.vue'
 </script>
 
 <style lang="scss" scoped></style>
