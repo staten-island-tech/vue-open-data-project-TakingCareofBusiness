@@ -1,6 +1,7 @@
 <template>
   <div>
     <div><h1 class="text-3xl">Eyad</h1></div>
+    <APIData />
   </div>
 </template>
 
