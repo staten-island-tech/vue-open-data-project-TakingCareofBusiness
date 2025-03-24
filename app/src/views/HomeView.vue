@@ -4,6 +4,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import APIData from "APIData.vue"
+</script>
 
 <style lang="scss" scoped></style>
