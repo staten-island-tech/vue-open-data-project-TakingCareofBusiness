@@ -5,7 +5,7 @@
 <script setup>
 import { onMounted } from 'vue'
 const API = 'https://data.cityofnewyork.us/resource/7479-ugqb.json'
-let dat = ''
+let dat = 0
 onMounted(async () => {
   try {
     const response = await fetch(API)
