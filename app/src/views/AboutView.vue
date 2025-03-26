@@ -1,5 +1,8 @@
 <template>
-  <div class="box"><PieChart class="height" :data="pieData" :key="pieDataKey" /></div>
+  <div>
+    <h1 class="text-center text-3xl">Age of Inmates</h1>
+    <div class="box"><PieChart class="height" :data="pieData" :key="pieDataKey" /></div>
+  </div>
 </template>
 
 <script setup>
@@ -29,8 +32,6 @@ onMounted(async () => {
         data[6] += 1
       }
     })
-
-    console.log(data)
     pieDataKey.value += 1
   } catch (error) {
     console.log(error)
