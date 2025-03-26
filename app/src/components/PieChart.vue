@@ -1,3 +1,9 @@
+<template>
+  <div>
+    <Pie class="mt-[2rem]" :data="props.data" :options="pieChartOptions" />
+  </div>
+</template>
+
 <script setup>
 import { reactive } from 'vue'
 import { Pie } from 'vue-chartjs'
@@ -9,7 +15,7 @@ const props = defineProps({
   data: Object,
 })
 
-const chartOptions = reactive({
+const pieChartOptions = reactive({
   responsive: true,
   plugins: {
     legend: {
@@ -18,9 +24,3 @@ const chartOptions = reactive({
   },
 })
 </script>
-
-<template>
-  <div>
-    <Pie class="mt-[2rem]" :data="props.data" :options="chartOptions" />
-  </div>
-</template>

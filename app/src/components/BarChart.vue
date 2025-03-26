@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div>
-      <Bar :data="props.data" :options="chartOptions" />
-    </div>
+    <Bar :data="props.data" :options="chartOptions" />
   </div>
 </template>
 
@@ -18,6 +16,20 @@ import {
   CategoryScale,
   LinearScale,
 } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
+const props = defineProps({
+  data: Object,
+})
+const barChartOptions = reactive({
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+  },
+})
 </script>
 
 <style lang="scss" scoped></style>

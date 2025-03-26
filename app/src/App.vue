@@ -6,6 +6,7 @@
         <nav>
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/oldhead">Age Chart</RouterLink>
+          <RouterLink to="/woah">Other Fart</RouterLink>
         </nav>
       </div>
     </header>
