@@ -5,7 +5,7 @@
         <h1 class="text-6xl">Daily Inmate Info</h1>
         <nav>
           <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/oldhead">Age Chart</RouterLink>
         </nav>
       </div>
     </header>

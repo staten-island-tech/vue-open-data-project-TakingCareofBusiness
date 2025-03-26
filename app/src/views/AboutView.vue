@@ -1,12 +1,13 @@
 <template>
-  <div><PieChart :data="pieData" /></div>
+  <div class="box"><PieChart class="height" :data="pieData" :key="pieDataKey" /></div>
 </template>
 
 <script setup>
-import { reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import PieChart from '../components/PieChart.vue'
 const API = 'https://data.cityofnewyork.us/resource/7479-ugqb.json'
 const data = reactive([0, 0, 0, 0, 0, 0, 0])
+const pieDataKey = ref(0)
 onMounted(async () => {
   try {
     const response = await fetch(API)
@@ -20,15 +21,17 @@ onMounted(async () => {
         data[2] += 1
       } else if (inmate.age < 50) {
         data[3] += 1
-      } else if (inmate < 60) {
+      } else if (inmate.age < 60) {
         data[4] += 1
-      } else if (inmate < 70) {
+      } else if (inmate.age < 70) {
         data[5] += 1
       } else {
         data[6] += 1
       }
     })
-    console.log(info)
+
+    console.log(data)
+    pieDataKey.value += 1
   } catch (error) {
     console.log(error)
   }
@@ -38,19 +41,29 @@ const pieData = reactive({
   labels: ['Under 20', '20 - 30', '30 - 40', '40 - 50', '50 - 60', '60 - 70', 'Over 70'],
   datasets: [
     {
-      data: data.value,
+      data: data,
       backgroundColor: [
-        '#ff5733',
-        '#df4c2d',
-        '#bf4126',
-        '#9f3620',
-        '#802b1a',
-        '#602113',
-        '#40160d',
+        '#FFCE56', // Light Yellow
+        '#36A2EB', // Light Blue
+        '#FF6384', // Light Pink
+        '#4BC0C0', // Light Teal
+        '#FF9F40', // Light Orange
+        '#FFCD56', // Light Gold
+        '#9966FF', // Light Purple
       ],
     },
   ],
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.height {
+  height: 900px;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffb6c1;
+}
+</style>
